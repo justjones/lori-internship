@@ -1,0 +1,60 @@
+.skeleton-seller {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+  }
+  
+  .skeleton-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ddd;
+    flex-shrink: 0;
+  }
+  
+  .skeleton-info {
+    flex: 1;
+  }
+  
+  .skeleton-line {
+    height: 14px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 6px;
+    margin-bottom: 6px;
+  }
+  
+  .skeleton-line.small {
+    width: 60%;
+    height: 12px;
+  }
+  
+  /* Shimmer animation */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150px;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    animation: shimmer 1.2s infinite;
+  }
+  
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
