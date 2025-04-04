@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { getNewItems } from "services/newItemsServices";
-// import { getNewItems } from "services/authorDetails";
 import AuthorImage from "../../images/author_thumbnail.jpg";
 import nftImage from "../../images/nftImage.jpg";
 import CountdownTimer from "components/common/CountdownTimer";
