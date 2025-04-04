@@ -11,11 +11,21 @@
   box-shadow: 2px 2px 30px 0 rgba(20, 20, 20, 0.1);
 }
 
+.nft__item {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.nft__item_info {
+  margin-bottom: none;
+}
+
 .nft_wrap img,
 .nft_coll_pp img {
   width: 100%;
   height: auto;
   object-fit: cover;
+  
 }
 
 .nft_wrap img {
@@ -42,9 +52,36 @@
   margin: 0 -12px;
 }
 
+.new-items-slider .slick-slide > div {
+  padding: 0 6px; /* tighter spacing between slides */
+}
+
+.new-items-slider .slick-list {
+  margin: 0 -6px;
+}
+
+
 /* Optional lazy img sizing fix */
 img.lazy.img-fluid {
   height: 220px;
+}
+
+/* More specific target */
+.new-items-slider .nft__item {
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.5s ease-in;
+  border-radius: 6px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.new-items-slider .nft__item:hover {
+  box-shadow: 2px 2px 30px 0 rgba(20, 20, 20, 0.1);
+}
+
+.nft__item_wrap {
+  height: 325px;
 }
 
 /* MOBILE */

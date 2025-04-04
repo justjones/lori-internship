@@ -1,0 +1,192 @@
+.skeleton .skeleton-box {
+    width: 100%;
+    height: 250px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+  
+  .skeleton .skeleton-text {
+    height: 18px;
+    background: #e0e0e0;
+    border-radius: 6px;
+    margin: 10px 0;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+  
+  .skeleton-title {
+    width: 80%;
+  }
+  
+  .skeleton-price {
+    width: 50%;
+  }
+  
+  .skeleton-likes {
+    width: 30%;
+  }
+  .skeleton-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    animation: pulse 1.2s ease-in-out infinite;
+    margin-bottom: 10px;
+  }
+  
+  .skeleton-followers {
+    width: 100px;
+    height: 16px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+  
+  .skeleton-button {
+    width: 80px;
+    height: 32px;
+    background: #e0e0e0;
+    border-radius: 6px;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+  
+  .skeleton-wallet {
+    width: 200px;
+    height: 12px;
+    margin-top: 5px;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+
+  /* Basic shimmer style */
+.skeleton {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150px;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.5s infinite;
+  }
+  
+  /* Keep your pulse animation for fallback */
+  @keyframes pulse {
+    0% {
+      background-color: #e0e0e0;
+    }
+    50% {
+      background-color: #f0f0f0;
+    }
+    100% {
+      background-color: #e0e0e0;
+    }
+  }
+  
+  /* Add shimmer animation */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-150px);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  
+  @keyframes pulse {
+    0% {
+      background-color: #e0e0e0;
+    }
+    50% {
+      background-color: #f0f0f0;
+    }
+    100% {
+      background-color: #e0e0e0;
+    }
+  }
+
+  /* Adjust skeleton preview height on smaller screens */
+@media (max-width: 992px) {
+    .skeleton .nft__item_preview,
+    .skeleton-box {
+      height: 200px;
+    }
+  
+    .skeleton-avatar {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .skeleton-button {
+      width: 70px;
+      height: 30px;
+    }
+  
+    .skeleton-text {
+      height: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .skeleton .nft__item_preview,
+    .skeleton-box {
+      height: 170px;
+    }
+  
+    .skeleton-avatar {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .skeleton-button {
+      width: 60px;
+      height: 28px;
+    }
+  
+    .skeleton-title {
+      width: 60%;
+    }
+  
+    .skeleton-price {
+      width: 40%;
+    }
+  
+    .skeleton-likes {
+      width: 25%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .skeleton .nft__item_preview,
+    .skeleton-box {
+      height: 150px;
+    }
+  
+    .skeleton-avatar {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .skeleton-button {
+      width: 50px;
+      height: 24px;
+    }
+  
+    .skeleton-wallet,
+    .skeleton-followers {
+      width: 80%;
+    }
+  }
+  
+  
