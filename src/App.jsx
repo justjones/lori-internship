@@ -7,6 +7,8 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 
+
+
 function App() {
   return (
     <Router>
@@ -16,6 +18,7 @@ function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/author" element={<Author />} />
         <Route path="/item/:id" element={<ItemDetails />} />
+        <Route path="/author/:id" element={<Author />} />
       </Routes>
       <Footer />
     </Router>
