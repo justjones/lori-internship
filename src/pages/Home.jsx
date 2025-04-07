@@ -15,12 +15,33 @@ const Home = () => {
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
         <div id="top"></div>
-        <Landing />
-        <LandingIntro />
-        <HotCollections />
-        <NewItems />
-        <TopSellers />
-        <BrowseByCategory />
+
+        <Landing /> {/* Already uses fade-up/fade-in internally */}
+
+        {/* Intro (fade-up) */}
+        <div data-aos="fade-up">
+          <LandingIntro />
+        </div>
+
+        {/* Hot Collections (fade-up) */}
+        <div data-aos="fade-up" data-aos-delay="100">
+          <HotCollections />
+        </div>
+
+        {/* New Items (fade-up) */}
+        <div data-aos="fade-up" data-aos-delay="200">
+          <NewItems />
+        </div>
+
+        {/* Top Sellers (fade-up) */}
+        <div data-aos="fade-up" data-aos-delay="300">
+          <TopSellers />
+        </div>
+
+        {/* Browse by Category (fade-left) */}
+        <div data-aos="fade-left" data-aos-delay="400">
+          <BrowseByCategory />
+        </div>
       </div>
     </div>
   );

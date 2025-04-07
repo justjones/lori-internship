@@ -5,6 +5,8 @@ import { getAuthorDetails } from "../services/authorDetails";
 import AuthorItems from "../components/author/AuthorItems";
 import SkeletonAuthorProfile from "../components/common/SkeletonAuthorProfile";
 import "../css/styles/style.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Author = () => {
   const { id } = useParams();
@@ -12,6 +14,22 @@ const Author = () => {
   const [loading, setLoading] = useState(true);
   const [isFollowing, setIsFollowing] = useState(false);
   const [followers, setFollowers] = useState(0);
+
+  // Scroll to top on page load
+  useEffect(() => {
+    document.documentElement.scrollTop = 0;
+  }, []);
+
+  // AOS init & refresh
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease-in-out",
+    });
+
+    AOS.refresh();
+  }, []);
 
   useEffect(() => {
     const fetchAuthorData = async () => {
@@ -46,14 +64,14 @@ const Author = () => {
           style={{ background: `url(${AuthorBanner}) top` }}
         ></section>
 
-        <section aria-label="section">
+        <section aria-label="section" data-aos="fade-up">
           <div className="container">
             <div className="row">
               <div className="col-md-12">
                 {loading ? (
                   <SkeletonAuthorProfile />
                 ) : (
-                  <div className="d_profile de-flex">
+                  <div className="d_profile de-flex" data-aos="fade-up" data-aos-delay="100">
                     <div className="de-flex-col">
                       <div className="profile_avatar">
                         <img src={authorData?.authorImage} alt="author" />
@@ -61,9 +79,7 @@ const Author = () => {
                         <div className="profile_name">
                           <h4>
                             Author {authorData?.authorId}
-                            <span className="profile_username">
-                              @{authorData?.tag}
-                            </span>
+                            <span className="profile_username">@{authorData?.tag}</span>
                             <span className="profile_wallet" id="wallet">
                               {authorData.address.slice(0, 18)}...
                             </span>
@@ -89,11 +105,8 @@ const Author = () => {
               </div>
 
               <div className="col-md-12">
-                <div className="de_tab tab_simple">
-                  <AuthorItems
-                    items={authorData?.nftCollection}
-                    loading={loading}
-                  />
+                <div className="de_tab tab_simple" data-aos="fade-up" data-aos-delay="200">
+                  <AuthorItems items={authorData?.nftCollection} loading={loading} />
                 </div>
               </div>
             </div>
