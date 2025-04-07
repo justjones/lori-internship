@@ -63,7 +63,7 @@
 
 /* Optional lazy img sizing fix */
 img.lazy.img-fluid {
-  height: 220px;
+  height: 100%;
 }
 
 /* More specific target */
