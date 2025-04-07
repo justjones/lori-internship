@@ -10,3 +10,74 @@
 @import "./css/styles/style.css";
 @import "./css/colors/scheme-01.css";
 @import "./css/styles/coloring.css";
+
+
+.explore-skeleton-card {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .explore-skeleton-avatar {
+    width: 40px;
+    height: 40px;
+    background: #ccc;
+    border-radius: 50%;
+  }
+  
+  .explore-skeleton-timer {
+    height: 20px;
+    width: 60%;
+    background: #ddd;
+    border-radius: 4px;
+  }
+  
+  .explore-skeleton-image {
+    width: 100%;
+    height: 200px;
+    background: #e0e0e0;
+    border-radius: 8px;
+  }
+  
+  .explore-skeleton-line {
+    height: 14px;
+    background: #ddd;
+    border-radius: 4px;
+    width: 80%;
+  }
+  
+  .explore-skeleton-line.short {
+    width: 50%;
+  }
+  
+  .explore-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .explore-shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150px;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    animation: explore-shimmer 1.3s infinite;
+  }
+  
+  @keyframes explore-shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
